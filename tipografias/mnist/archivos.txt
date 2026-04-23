@@ -1,0 +1,1 @@
+Descargar las bases de datos de https://github.com/golbin/TensorFlow-MNIST/tree/master/mnist/data

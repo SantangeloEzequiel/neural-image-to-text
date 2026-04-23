@@ -1,0 +1,53 @@
+invitar via mail
+Al apenas empezar:
+	git config --global user.name "Tu Nombre"		(sólo una vez)
+	git config --global user.email "tu-email@ejemplo.com"	(sólo una vez)
+	situarse en un directorio y luego copiar el directorio github (sólo una vez):
+		git clone https://github.com/feder2021/RedNeuronal.git	
+	Modificar cualquier archivo. Subir al staging:
+		git add . o git add <nombre archivo> //Si necesitas cambiar algo que ya añadiste al área de staging, podes usar git reset <archivo> para quitarlo del 							área de staging sin perder los cambios 			
+		realizados en el archivo.
+		git status 	
+	Hacer un commit:
+		git commit -m "Mensaje"
+	Subir al repositorio github:
+		git push origin main 		//antes de hacer un push conviene hacer un pull para ver si hubo cambios.
+
+Luego, cada vez que se quiera utilizar el repositorio, solo entrar a la carpeta normalmente. 
+	
+Comandos Básicos
+
+	git init		 		//Crea un repositorio en el directorio actual (si se empieza un proyecto desde cero)
+	git status 				//Este comando te muestra los archivos modificados
+
+-Añadir archivos al área de staging (preparación para el commit):
+	git add <archivo>  			//Añadir un archivo específico
+	git add .				//Añade todos los archivos
+	git reset <archivo>			//Quitar archivo de area de staging
+	git reset				//Quitar todos los archivos de staging 
+
+-Hacer un commit (guardar los cambios en el repositorio):
+	git commit -m "Mensaje del commit"	//Esto guarda los cambios en el historial de Git
+	git log					//Este comando te muestra un historial de los commits, con detalles como el hash del commit, el autor y el mensaje
+
+-Trabajar con ramas:
+	git branch				//Ver las ramas existentes
+	git branch <nombre-de-la-rama>		//Crear nueva rama
+	git checkout <nombre-de-la-rama>	//Cambiar de rama
+	git checkout -b <nombre-de-la-rama>	//Crear y cambiar al mismo tiempo
+	git merge <rama-a-fusionar>		//Fusionar una rama (por ejemplo, feature) en la rama actual (por ejemplo, main)
+	
+-Sincronización con el repositorio remoto:
+	git remote add origin <URL-del-repositorio>	//configura tu repositorio local para que, cuando uses comandos como git push o git pull, Git sepa a qué repositorio remoto enviar o recibir los cambios.
+	git clone <url-del-repositorio>		//Esto descarga una copia del repositorio remoto a tu máquina local
+	git remote -v				//Ver los repositorios remotos configurados
+	git pull origin <rama>			//Esto descarga y fusiona los cambios de la rama especificada del repositorio remoto. Por ahora rama = main
+	git push origin <rama>			//Este comando sube los commits locales a la rama correspondiente en el repositorio remoto
+			
+Deshacer cambios:
+	git checkout -- <archivo>		//Deshacer cambios en un archivo (volver al estado anterior al commit)
+	git reset <archivo>			//Eliminar un archivo del área de staging (pero no eliminarlo del disco)
+	git reset --soft HEAD~1			//Deshacer un commit reciente (manteniendo los cambios locales)
+
+Ver el estado de los cambios (diferencias):
+	git diff				//Ver qué ha cambiado respecto al último commit
